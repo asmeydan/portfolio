@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Cover = () => {
   return (
-    <div className=" pl-20 bg-white height-screen flex flex-col-reverse md:flex-row">
+    <div className=" px-8 md:px-20 bg-white height-screen flex flex-col-reverse md:flex-row">
       <div className=" flex-1 flex justify-center flex-col gap-6">
         <h1 className=" text-4xl font-bold">Ahmet Salih Meydan</h1>
         <p>

@@ -5,7 +5,7 @@ import { BsServer } from "react-icons/bs";
 
 const Skills = () => {
   return (
-    <div className=" p-20 flex flex-col md:flex-row justify-between">
+    <div className=" px-8 py-20 md:px-20 flex flex-col md:flex-row justify-between">
       <div>
         <h1 className=" text-xl font-bold">Yıldız Technical University</h1>
         <p className=" font-semibold leading-7">
