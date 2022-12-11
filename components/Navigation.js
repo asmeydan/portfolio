@@ -6,7 +6,6 @@ const Navigation = () => {
 
   return (
     <div className=' flex fixed w-full justify-between items-center px-8 md:px-20 h-20 bg-white'>
-        <div className=' w-8 h-1'></div>
         <Link href="/" className=' text-lg font-bold'>
             ASM
         </Link>
