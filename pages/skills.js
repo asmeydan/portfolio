@@ -17,7 +17,7 @@ const skills = () => {
   return (
     <Layout>
       <Head>
-        <title>asmeydan -skills</title>
+        <title>asmeydan - skills</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className=" p-20 bg-white grid gap-4 min-height-screen place-content-center place-items-center grid-cols-2 sm:grid-cols-4 md:grid-cols-8">
