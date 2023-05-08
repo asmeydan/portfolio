@@ -45,22 +45,6 @@ function App() {
   }
 
   let lose = false;
-  const restart = () => {
-    for (let i = 0; i < 10; i++) {
-      for (let j = 0; j < 10; j++) {
-        if (map[i][j] > 0) {
-          map[i][j] = -1;
-        }
-      }
-    }
-    snake.headN = 5;
-    snake.headM = 3;
-    snake.direction = "right";
-    snake.long = 1;
-    map[snake.headN][snake.headM] = 1;
-    setIsLose(false);
-    lose = false;
-  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -275,26 +259,49 @@ function App() {
       }
       yem = 0;
     }, 250);
+    //! DÜZELTMEYİ UNUTMA
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className=" flex justify-center items-center h-screen">
+    <div className=" flex flex-col justify-around items-center h-screen overflow-hidden">
         <Link href="/games" className=" absolute top-5 left-5 z-20 text-5xl">
             <IoIosArrowBack/>
         </Link>
       <canvas
-        className=" border-4 border-sky-400 h-[500px] w-[500px]"
+        className=" border-4 border-sky-400 h-[500px] w-[500px] scale-[0.6] sm:scale-75 md:scale-100 flex-none"
         ref={canvasRef}
       ></canvas>
+
+      <div className=" bg-emerald-700 w-32 h-32 rounded-full flex md:hidden flex-col justify-between p-2">
+        <div className=" w-full flex justify-center">
+          <div className=" rotate-90 w-10 h-10 flex justify-center items-center" onClick={()=> snake.direction = "up"}>
+            <IoIosArrowBack/>
+          </div>
+        </div>
+        <div className=" w-full flex justify-between ">
+          <div className="  w-10 h-10 flex justify-center items-center" onClick={()=> snake.direction = "left"}>
+            <IoIosArrowBack/>
+          </div>
+          <div className=" rotate-180  w-10 h-10 flex justify-center items-center" onClick={()=> snake.direction = "right"}>
+            <IoIosArrowBack/>
+          </div>
+        </div>
+        <div className=" w-full flex justify-center">
+          <div className=" -rotate-90  w-10 h-10 flex justify-center items-center" onClick={()=> snake.direction = "down"}>
+            <IoIosArrowBack/>
+          </div>
+        </div>
+      </div>
+
       {isLose === true && (
-        <div className=" absolute flex flex-col justify-center items-center w-screen h-screen bg-slate-600 z-10">
-          <p className=" text-4xl bg-sky-300 rounded-3xl p-10">Lose</p>
+        <div className=" absolute top-0 left-0 flex flex-col justify-center items-center gap-3 w-screen h-screen bg-slate-600 z-10">
+          <p className=" text-4xl bg-fuchsia-300 rounded-3xl p-10">Lose</p>
           <button
-            className=" px-8 bg-sky-800 py-3 rounded-lg text-white"
-            // onClick={restart}
+            className=" px-8 bg-fuchsia-900 py-3 rounded-lg text-white"
+            onClick={()=> window.location.replace("https://asmeydan.com/games/snake-game")}
           >
-            restart <br /> (refresh page)
+            restart
           </button>
         </div>
       )}
