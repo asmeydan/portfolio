@@ -273,7 +273,7 @@ function App() {
         ref={canvasRef}
       ></canvas>
 
-      <div className=" bg-emerald-700 w-32 h-32 rounded-full flex md:hidden flex-col justify-between p-2">
+      <div className=" absolute bg-emerald-700/20 w-32 h-32 rounded-full flex flex-col justify-between p-2">
         <div className=" w-full flex justify-center">
           <div className=" rotate-90 w-10 h-10 flex justify-center items-center" onClick={()=> snake.direction = "up"}>
             <IoIosArrowBack/>
